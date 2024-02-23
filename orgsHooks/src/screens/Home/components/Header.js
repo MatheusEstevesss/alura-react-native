@@ -6,9 +6,16 @@ import { loadHeader } from '../../../services/loadData.js';
 import icon from '../../../assets/logo.png';
 
 class Header extends React.Component {
+    state = {
+        header: {
+            welcome: '',
+            subtitle: ''
+        }
+    }
+
     updateHeader() {
         const result = loadHeader();
-        console.log(result)
+        this.setState({ header: result })
     }
 
     componentDidMount() {
@@ -16,12 +23,12 @@ class Header extends React.Component {
     }
 
     render() {
-        return ( 
+        return (
             <View style={styles.header}>
                 <Image source={icon} style={styles.image}/>
     
-                <Text style={styles.welcome}>Olá gato</Text>
-                <Text style={styles.subtitle}>Encontre os melhores produtores</Text>
+                <Text style={styles.welcome}>{this.state.header.welcome}</Text>
+                <Text style={styles.subtitle}>{this.state.header.subtitle}</Text>
             </View>
         )
     }
