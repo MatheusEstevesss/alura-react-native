@@ -36,7 +36,7 @@ class Header extends React.Component {
 
 const styles = StyleSheet.create({
     header: {
-        backgroundColor: '#F6F6F6',
+        backgroundColor: '#d3d3d3',
         padding: 16
     },
     image: {
@@ -47,11 +47,13 @@ const styles = StyleSheet.create({
         marginTop: 24,
         fontSize: 26,
         lineHeight: 42,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: '#464646'
     },
     subtitle: {
         fontSize: 16,
-        lineHeight: 26
+        lineHeight: 26,
+        color: '#313131'
     }
 });
 
