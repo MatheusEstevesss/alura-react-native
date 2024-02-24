@@ -6,18 +6,11 @@ import {
     StyleSheet 
 } from 'react-native';
 
-import { loadProducers } from '../../../services/loadData.js';
 import Producer from './Producer/Producer.js';
+import useProducers from '../../../hooks/useProducers.js';
 
 export default function Producers({ header: Header }) {
-    const [title, setTitle] = useState(''); //sempre declarado no começo da função
-    const [list, setList] = useState([]);
-
-    useEffect(() => {
-        const result = loadProducers();
-        setTitle(result.titulo);
-        setList(result.lista);
-    }, []); //quanto tem um array vazio o componente vai executar uma vez só quando o component for carregado
+    const [title, list] = useProducers();
 
     const topList = () => {
         return <>
