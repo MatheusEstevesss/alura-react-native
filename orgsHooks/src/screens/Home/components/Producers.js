@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { 
     Text, 
     FlatList,
-    Image, 
     StyleSheet 
 } from 'react-native';
 

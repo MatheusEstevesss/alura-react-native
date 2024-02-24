@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useMemo } from 'react';
 import { 
     Text,
     View,
@@ -9,11 +9,17 @@ import {
 import { styles } from './styles_producer.js';
 import Stars from '../../../../components/stars.js';
 
+const dintanceMeters = (distancia) => {
+    return `${distancia}m`
+}
+
 export default function Producer({ nome, imagem, distancia, estrelas }) {
     const [ selected, invertSelect ] = useReducer(
         (selected) => !selected,
         false
     );
+
+    const distanceText = useMemo( () => dintanceMeters(distancia), [distancia] );
 
     return (
         <TouchableOpacity 
@@ -32,7 +38,7 @@ export default function Producer({ nome, imagem, distancia, estrelas }) {
                         bigSize={ selected }
                     />
                 </View>
-                <Text style={ styles.distance }>{ distancia }</Text>
+                <Text style={ styles.distance }>{ distanceText }</Text>
             </View>
 
         </TouchableOpacity>
