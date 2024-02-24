@@ -22,8 +22,9 @@ export default function Producer({ nome, imagem, distancia, estrelas }) {
             <View style={ styles.infos }>
                 <View>
                     <Text style={ styles.name }>{ nome }</Text>
-                    <Stars a
-                        mount={ estrelas }
+                    
+                    <Stars 
+                        amount={ estrelas }
                         edit={ selected }
                         bigSize={ selected }
                     />
